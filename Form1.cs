@@ -16,7 +16,7 @@ namespace Kuran
         public OleDbDataAdapter dAdapter;
         public DataSet dSet;
         public int formheight, formwidth;
-        public string conString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + System.IO.Directory.GetCurrentDirectory() + "\\Kutsal_Kitaplar.accdb;Persist Security Info=False;";
+        public string conString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + System.IO.Directory.GetCurrentDirectory() + "\\Kutsal_Kitaplar.accdb";
         public string kitap = "K";
         public string kitapad = "";
         public bool kitapsec = false;
@@ -24,7 +24,9 @@ namespace Kuran
         {
             InitializeComponent();
             this.SizeChanged += new EventHandler(Form1_Resize);
+            //MessageBox.Show(System.IO.Directory.GetCurrentDirectory() + "\\Kutsal_Kitaplar.accdb");
         }
+
         FormWindowState LastWindowState = FormWindowState.Minimized;
         private void Form1_Resize(object sender, EventArgs e)
         {
@@ -105,8 +107,9 @@ namespace Kuran
                     dAdapter.Fill(dSet, "sureler");
                     listBox1.DisplayMember = "suretam";
                     listBox1.ValueMember = "sure";
-                    listBox1.DataSource = dSet.Tables["sureler"];           
-                }
+                    listBox1.DataSource = dSet.Tables["sureler"];
+                    
+            }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Hata: " + ex.Message);
