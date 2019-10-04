@@ -1,4 +1,6 @@
 # KutsalKitaplar
+Kuran(kelime kelime arapça çeviri), Tevrat, İncil, Zebur
+
 
 <p align="center"><a href="https://github.com/takyonxxx/KutsalKitaplar/blob/master/screen.jpg">
 		<img src="https://github.com/takyonxxx/KutsalKitaplar/blob/master/screen.jpg" 
