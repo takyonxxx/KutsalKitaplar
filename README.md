@@ -1,7 +1,7 @@
 # KutsalKitaplar
-Kuran(kelime kelime arapça çeviri), Tevrat, İncil, Zebur
-Kutsal_Kitaplar.accdb dosyası exe ile aynı yerde olmalı
-Arama motoru
+Kuran(kelime kelime arapça çeviri), Tevrat, İncil, Zebur</br>
+Kutsal_Kitaplar.accdb dosyası exe ile aynı yerde olmalı</br>
+Arama motoru mevcut</br>
 
 
 <p align="center"><a href="https://github.com/takyonxxx/KutsalKitaplar/blob/master/screen.jpg">
