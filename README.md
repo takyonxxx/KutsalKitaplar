@@ -1,5 +1,6 @@
 # KutsalKitaplar
 Kuran(kelime kelime arapça çeviri), Tevrat, İncil, Zebur
+Kutsal_Kitaplar.accdb dosyası exe ile aynı yerde olmalı
 Arama motoru
 
 
