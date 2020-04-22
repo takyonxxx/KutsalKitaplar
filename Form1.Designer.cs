@@ -1,6 +1,6 @@
 ﻿namespace Kuran
 {
-    partial class Form1
+    partial class form_main
     {
         /// <summary>
         /// Required designer variable.
@@ -28,328 +28,381 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_main));
+            this.list_sure = new System.Windows.Forms.ListBox();
+            this.dataGrid_ceviri = new System.Windows.Forms.DataGridView();
+            this.text_arapca = new System.Windows.Forms.TextBox();
+            this.richText_sure = new System.Windows.Forms.RichTextBox();
+            this.btn_sort_az = new System.Windows.Forms.Button();
+            this.btn_sort_inis = new System.Windows.Forms.Button();
+            this.btn_reset = new System.Windows.Forms.Button();
+            this.text_latin_arapca = new System.Windows.Forms.TextBox();
+            this.text_meal = new System.Windows.Forms.TextBox();
+            this.text_search = new System.Windows.Forms.TextBox();
+            this.btn_search = new System.Windows.Forms.Button();
+            this.btn_back = new System.Windows.Forms.Button();
+            this.btn_forward = new System.Windows.Forms.Button();
+            this.text_sure = new System.Windows.Forms.TextBox();
+            this.text_ayet = new System.Windows.Forms.TextBox();
+            this.btn_go = new System.Windows.Forms.Button();
+            this.btn_zebur = new System.Windows.Forms.Button();
+            this.btn_incil = new System.Windows.Forms.Button();
+            this.btn_tevrat = new System.Windows.Forms.Button();
+            this.btn_kuran = new System.Windows.Forms.Button();
+            this.group_controls = new System.Windows.Forms.GroupBox();
+            this.group_sure = new System.Windows.Forms.GroupBox();
+            this.group_ceviri = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_ceviri)).BeginInit();
+            this.group_controls.SuspendLayout();
+            this.group_sure.SuspendLayout();
+            this.group_ceviri.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listBox1
+            // list_sure
             // 
-            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.listBox1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 34);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(170, 147);
-            this.listBox1.TabIndex = 0;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.list_sure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.list_sure.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.list_sure.FormattingEnabled = true;
+            this.list_sure.ItemHeight = 27;
+            this.list_sure.Location = new System.Drawing.Point(15, 2);
+            this.list_sure.Margin = new System.Windows.Forms.Padding(6);
+            this.list_sure.Name = "list_sure";
+            this.list_sure.Size = new System.Drawing.Size(336, 436);
+            this.list_sure.TabIndex = 0;
+            this.list_sure.SelectedIndexChanged += new System.EventHandler(this.list_sure_SelectedIndexChanged);
             // 
-            // button1
+            // dataGrid_ceviri
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.Location = new System.Drawing.Point(678, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 24);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "İLERİ";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dataGrid_ceviri.AllowUserToAddRows = false;
+            this.dataGrid_ceviri.AllowUserToDeleteRows = false;
+            this.dataGrid_ceviri.AllowUserToOrderColumns = true;
+            this.dataGrid_ceviri.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dataGrid_ceviri.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGrid_ceviri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_ceviri.Location = new System.Drawing.Point(15, 89);
+            this.dataGrid_ceviri.Margin = new System.Windows.Forms.Padding(6);
+            this.dataGrid_ceviri.Name = "dataGrid_ceviri";
+            this.dataGrid_ceviri.ReadOnly = true;
+            this.dataGrid_ceviri.RowHeadersWidth = 82;
+            this.dataGrid_ceviri.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGrid_ceviri.Size = new System.Drawing.Size(1541, 306);
+            this.dataGrid_ceviri.TabIndex = 6;
             // 
-            // button2
+            // text_arapca
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.Location = new System.Drawing.Point(616, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 24);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "GERİ";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.text_arapca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.text_arapca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.text_arapca.ForeColor = System.Drawing.Color.White;
+            this.text_arapca.Location = new System.Drawing.Point(15, 631);
+            this.text_arapca.Margin = new System.Windows.Forms.Padding(6);
+            this.text_arapca.Multiline = true;
+            this.text_arapca.Name = "text_arapca";
+            this.text_arapca.ReadOnly = true;
+            this.text_arapca.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.text_arapca.Size = new System.Drawing.Size(1541, 100);
+            this.text_arapca.TabIndex = 10;
             // 
-            // dataGridView1
+            // richText_sure
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 5);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(894, 113);
-            this.dataGridView1.TabIndex = 6;
+            this.richText_sure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.richText_sure.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.richText_sure.ForeColor = System.Drawing.Color.White;
+            this.richText_sure.Location = new System.Drawing.Point(363, 9);
+            this.richText_sure.Margin = new System.Windows.Forms.Padding(6);
+            this.richText_sure.Name = "richText_sure";
+            this.richText_sure.ReadOnly = true;
+            this.richText_sure.Size = new System.Drawing.Size(1193, 423);
+            this.richText_sure.TabIndex = 11;
+            this.richText_sure.Text = "";
+            this.richText_sure.TextChanged += new System.EventHandler(this.richText_sure_TextChanged);
             // 
-            // textBox4
+            // btn_sort_az
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(8, 326);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox4.Size = new System.Drawing.Size(894, 66);
-            this.textBox4.TabIndex = 10;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.btn_sort_az.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_sort_az.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sort_az.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sort_az.Location = new System.Drawing.Point(137, 33);
+            this.btn_sort_az.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_sort_az.Name = "btn_sort_az";
+            this.btn_sort_az.Size = new System.Drawing.Size(110, 50);
+            this.btn_sort_az.TabIndex = 19;
+            this.btn_sort_az.Text = "A-Z";
+            this.btn_sort_az.UseVisualStyleBackColor = false;
+            this.btn_sort_az.Click += new System.EventHandler(this.btn_sort_az_Click);
             // 
-            // richTextBox1
+            // btn_sort_inis
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.White;
-            this.richTextBox1.Location = new System.Drawing.Point(180, 34);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(722, 200);
-            this.richTextBox1.TabIndex = 11;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.btn_sort_inis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_sort_inis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sort_inis.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sort_inis.Location = new System.Drawing.Point(15, 33);
+            this.btn_sort_inis.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_sort_inis.Name = "btn_sort_inis";
+            this.btn_sort_inis.Size = new System.Drawing.Size(110, 50);
+            this.btn_sort_inis.TabIndex = 20;
+            this.btn_sort_inis.Text = "İNİŞ";
+            this.btn_sort_inis.UseVisualStyleBackColor = false;
+            this.btn_sort_inis.Click += new System.EventHandler(this.btn_sort_inis_Click);
             // 
-            // textBox3
+            // btn_reset
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(498, 7);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(38, 24);
-            this.textBox3.TabIndex = 12;
-            this.textBox3.Text = "1";
+            this.btn_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_reset.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reset.Location = new System.Drawing.Point(259, 33);
+            this.btn_reset.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(152, 50);
+            this.btn_reset.TabIndex = 21;
+            this.btn_reset.Text = "RESET";
+            this.btn_reset.UseVisualStyleBackColor = false;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
-            // button3
+            // text_latin_arapca
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.Location = new System.Drawing.Point(445, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 24);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "GİT";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.text_latin_arapca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.text_latin_arapca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.text_latin_arapca.Location = new System.Drawing.Point(15, 407);
+            this.text_latin_arapca.Margin = new System.Windows.Forms.Padding(6);
+            this.text_latin_arapca.Multiline = true;
+            this.text_latin_arapca.Name = "text_latin_arapca";
+            this.text_latin_arapca.ReadOnly = true;
+            this.text_latin_arapca.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.text_latin_arapca.Size = new System.Drawing.Size(1541, 100);
+            this.text_latin_arapca.TabIndex = 14;
             // 
-            // textBox5
+            // text_meal
             // 
-            this.textBox5.BackColor = System.Drawing.Color.Black;
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox5.ForeColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(542, 7);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(68, 24);
-            this.textBox5.TabIndex = 15;
-            this.textBox5.Text = "1";
+            this.text_meal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.text_meal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.text_meal.Location = new System.Drawing.Point(15, 519);
+            this.text_meal.Margin = new System.Windows.Forms.Padding(6);
+            this.text_meal.Multiline = true;
+            this.text_meal.Name = "text_meal";
+            this.text_meal.ReadOnly = true;
+            this.text_meal.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.text_meal.Size = new System.Drawing.Size(1541, 100);
+            this.text_meal.TabIndex = 7;
             // 
-            // textBox6
+            // text_search
             // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.Location = new System.Drawing.Point(303, 8);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(75, 20);
-            this.textBox6.TabIndex = 16;
+            this.text_search.BackColor = System.Drawing.Color.White;
+            this.text_search.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_search.Location = new System.Drawing.Point(1329, 37);
+            this.text_search.Margin = new System.Windows.Forms.Padding(6, 10, 6, 6);
+            this.text_search.Name = "text_search";
+            this.text_search.Size = new System.Drawing.Size(215, 35);
+            this.text_search.TabIndex = 16;
             // 
-            // button4
+            // btn_search
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button4.Location = new System.Drawing.Point(381, 6);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(55, 24);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "ARA";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btn_search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_search.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.Location = new System.Drawing.Point(1207, 33);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(110, 50);
+            this.btn_search.TabIndex = 17;
+            this.btn_search.Text = "ARA";
+            this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
-            // button6
+            // btn_back
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button6.Location = new System.Drawing.Point(15, 5);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(55, 23);
-            this.button6.TabIndex = 19;
-            this.button6.Text = "A-Z";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btn_back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_back.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_back.Location = new System.Drawing.Point(1085, 33);
+            this.btn_back.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(110, 50);
+            this.btn_back.TabIndex = 5;
+            this.btn_back.Text = "GERİ";
+            this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
-            // button7
+            // btn_forward
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button7.Location = new System.Drawing.Point(83, 5);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(55, 23);
-            this.button7.TabIndex = 20;
-            this.button7.Text = "İNİŞ";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btn_forward.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_forward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_forward.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_forward.Location = new System.Drawing.Point(963, 33);
+            this.btn_forward.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_forward.Name = "btn_forward";
+            this.btn_forward.Size = new System.Drawing.Size(110, 50);
+            this.btn_forward.TabIndex = 4;
+            this.btn_forward.Text = "İLERİ";
+            this.btn_forward.UseVisualStyleBackColor = false;
+            this.btn_forward.Click += new System.EventHandler(this.btn_forward_Click);
             // 
-            // button8
+            // text_sure
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button8.Location = new System.Drawing.Point(15, 29);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(123, 23);
-            this.button8.TabIndex = 21;
-            this.button8.Text = "RESET";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.text_sure.BackColor = System.Drawing.Color.Black;
+            this.text_sure.Enabled = false;
+            this.text_sure.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_sure.ForeColor = System.Drawing.Color.White;
+            this.text_sure.Location = new System.Drawing.Point(819, 37);
+            this.text_sure.Margin = new System.Windows.Forms.Padding(6);
+            this.text_sure.Name = "text_sure";
+            this.text_sure.ReadOnly = true;
+            this.text_sure.Size = new System.Drawing.Size(132, 35);
+            this.text_sure.TabIndex = 15;
+            this.text_sure.Text = "1";
             // 
-            // button10
+            // text_ayet
             // 
-            this.button10.BackColor = System.Drawing.Color.LawnGreen;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button10.Location = new System.Drawing.Point(85, 5);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(70, 24);
-            this.button10.TabIndex = 23;
-            this.button10.Text = "TEVRAT";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.text_ayet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.text_ayet.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.text_ayet.ForeColor = System.Drawing.Color.White;
+            this.text_ayet.Location = new System.Drawing.Point(735, 37);
+            this.text_ayet.Margin = new System.Windows.Forms.Padding(6);
+            this.text_ayet.Name = "text_ayet";
+            this.text_ayet.Size = new System.Drawing.Size(72, 35);
+            this.text_ayet.TabIndex = 12;
+            this.text_ayet.Text = "1";
             // 
-            // button11
+            // btn_go
             // 
-            this.button11.BackColor = System.Drawing.Color.LawnGreen;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button11.Location = new System.Drawing.Point(158, 5);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(68, 24);
-            this.button11.TabIndex = 24;
-            this.button11.Text = "ZEBUR";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.btn_go.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_go.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_go.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_go.Location = new System.Drawing.Point(623, 33);
+            this.btn_go.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_go.Name = "btn_go";
+            this.btn_go.Size = new System.Drawing.Size(100, 50);
+            this.btn_go.TabIndex = 13;
+            this.btn_go.Text = "GİT";
+            this.btn_go.UseVisualStyleBackColor = false;
+            this.btn_go.Click += new System.EventHandler(this.btn_go_Click);
             // 
-            // button12
+            // btn_zebur
             // 
-            this.button12.BackColor = System.Drawing.Color.LawnGreen;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button12.Location = new System.Drawing.Point(12, 5);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(70, 24);
-            this.button12.TabIndex = 25;
-            this.button12.Text = "KURAN";
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.btn_zebur.BackColor = System.Drawing.Color.LawnGreen;
+            this.btn_zebur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_zebur.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_zebur.Location = new System.Drawing.Point(471, 33);
+            this.btn_zebur.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_zebur.Name = "btn_zebur";
+            this.btn_zebur.Size = new System.Drawing.Size(140, 50);
+            this.btn_zebur.TabIndex = 24;
+            this.btn_zebur.Text = "ZEBUR";
+            this.btn_zebur.UseVisualStyleBackColor = false;
+            this.btn_zebur.Click += new System.EventHandler(this.btn_zebur_Click);
             // 
-            // button5
+            // btn_incil
             // 
-            this.button5.BackColor = System.Drawing.Color.LawnGreen;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button5.Location = new System.Drawing.Point(229, 5);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(68, 24);
-            this.button5.TabIndex = 26;
-            this.button5.Text = "İNCİL";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btn_incil.BackColor = System.Drawing.Color.LawnGreen;
+            this.btn_incil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_incil.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_incil.Location = new System.Drawing.Point(319, 33);
+            this.btn_incil.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_incil.Name = "btn_incil";
+            this.btn_incil.Size = new System.Drawing.Size(140, 50);
+            this.btn_incil.TabIndex = 26;
+            this.btn_incil.Text = "İNCİL";
+            this.btn_incil.UseVisualStyleBackColor = false;
+            this.btn_incil.Click += new System.EventHandler(this.btn_incil_Click);
             // 
-            // textBox2
+            // btn_tevrat
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.Location = new System.Drawing.Point(8, 225);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(894, 95);
-            this.textBox2.TabIndex = 14;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
+            this.btn_tevrat.BackColor = System.Drawing.Color.LawnGreen;
+            this.btn_tevrat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_tevrat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tevrat.Location = new System.Drawing.Point(167, 33);
+            this.btn_tevrat.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_tevrat.Name = "btn_tevrat";
+            this.btn_tevrat.Size = new System.Drawing.Size(140, 50);
+            this.btn_tevrat.TabIndex = 23;
+            this.btn_tevrat.Text = "TEVRAT";
+            this.btn_tevrat.UseVisualStyleBackColor = false;
+            this.btn_tevrat.Click += new System.EventHandler(this.btn_tevrat_Click);
             // 
-            // textBox1
+            // btn_kuran
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.Location = new System.Drawing.Point(8, 122);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(894, 97);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.btn_kuran.BackColor = System.Drawing.Color.LawnGreen;
+            this.btn_kuran.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_kuran.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_kuran.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_kuran.Location = new System.Drawing.Point(15, 33);
+            this.btn_kuran.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_kuran.Name = "btn_kuran";
+            this.btn_kuran.Size = new System.Drawing.Size(140, 50);
+            this.btn_kuran.TabIndex = 1;
+            this.btn_kuran.Text = "KURAN";
+            this.btn_kuran.UseVisualStyleBackColor = false;
+            this.btn_kuran.Click += new System.EventHandler(this.btn_kuran_Click);
             // 
-            // panel1
+            // group_controls
             // 
-            this.panel1.BackColor = System.Drawing.Color.Green;
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 247);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(911, 395);
-            this.panel1.TabIndex = 28;
+            this.group_controls.AutoSize = true;
+            this.group_controls.Controls.Add(this.btn_incil);
+            this.group_controls.Controls.Add(this.btn_kuran);
+            this.group_controls.Controls.Add(this.text_search);
+            this.group_controls.Controls.Add(this.btn_search);
+            this.group_controls.Controls.Add(this.btn_tevrat);
+            this.group_controls.Controls.Add(this.btn_back);
+            this.group_controls.Controls.Add(this.btn_forward);
+            this.group_controls.Controls.Add(this.text_sure);
+            this.group_controls.Controls.Add(this.text_ayet);
+            this.group_controls.Controls.Add(this.btn_zebur);
+            this.group_controls.Controls.Add(this.btn_go);
+            this.group_controls.Dock = System.Windows.Forms.DockStyle.Top;
+            this.group_controls.Location = new System.Drawing.Point(0, 0);
+            this.group_controls.Name = "group_controls";
+            this.group_controls.Size = new System.Drawing.Size(1565, 116);
+            this.group_controls.TabIndex = 1;
+            this.group_controls.TabStop = false;
             // 
-            // panel2
+            // group_sure
             // 
-            this.panel2.Controls.Add(this.button6);
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.button8);
-            this.panel2.Location = new System.Drawing.Point(12, 182);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(162, 64);
-            this.panel2.TabIndex = 29;
+            this.group_sure.AutoSize = true;
+            this.group_sure.Controls.Add(this.list_sure);
+            this.group_sure.Controls.Add(this.richText_sure);
+            this.group_sure.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.group_sure.Location = new System.Drawing.Point(0, 116);
+            this.group_sure.Name = "group_sure";
+            this.group_sure.Size = new System.Drawing.Size(1565, 1185);
+            this.group_sure.TabIndex = 2;
+            this.group_sure.TabStop = false;
             // 
-            // Form1
+            // group_ceviri
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 642);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.group_ceviri.Controls.Add(this.btn_reset);
+            this.group_ceviri.Controls.Add(this.btn_sort_inis);
+            this.group_ceviri.Controls.Add(this.btn_sort_az);
+            this.group_ceviri.Controls.Add(this.text_arapca);
+            this.group_ceviri.Controls.Add(this.dataGrid_ceviri);
+            this.group_ceviri.Controls.Add(this.text_meal);
+            this.group_ceviri.Controls.Add(this.text_latin_arapca);
+            this.group_ceviri.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.group_ceviri.Location = new System.Drawing.Point(0, 553);
+            this.group_ceviri.Name = "group_ceviri";
+            this.group_ceviri.Size = new System.Drawing.Size(1565, 748);
+            this.group_ceviri.TabIndex = 22;
+            this.group_ceviri.TabStop = false;
+            // 
+            // form_main
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1565, 1301);
+            this.Controls.Add(this.group_ceviri);
+            this.Controls.Add(this.group_sure);
+            this.Controls.Add(this.group_controls);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
-            this.Text = "TÜRKAY BİLİYOR Kutsal_Kitaplar";
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Name = "form_main";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = " TÜRKAY BİLİYOR Kutsal_Kitaplar";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_ceviri)).EndInit();
+            this.group_controls.ResumeLayout(false);
+            this.group_controls.PerformLayout();
+            this.group_sure.ResumeLayout(false);
+            this.group_ceviri.ResumeLayout(false);
+            this.group_ceviri.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,28 +410,29 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ListBox list_sure;
+        private System.Windows.Forms.DataGridView dataGrid_ceviri;
+        private System.Windows.Forms.TextBox text_arapca;
+        private System.Windows.Forms.RichTextBox richText_sure;
+        private System.Windows.Forms.Button btn_sort_az;
+        private System.Windows.Forms.Button btn_sort_inis;
+        private System.Windows.Forms.Button btn_reset;
+        private System.Windows.Forms.TextBox text_latin_arapca;
+        private System.Windows.Forms.TextBox text_meal;
+        private System.Windows.Forms.TextBox text_search;
+        private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.Button btn_back;
+        private System.Windows.Forms.Button btn_forward;
+        private System.Windows.Forms.TextBox text_sure;
+        private System.Windows.Forms.TextBox text_ayet;
+        private System.Windows.Forms.Button btn_go;
+        private System.Windows.Forms.Button btn_zebur;
+        private System.Windows.Forms.Button btn_incil;
+        private System.Windows.Forms.Button btn_tevrat;
+        private System.Windows.Forms.Button btn_kuran;
+        private System.Windows.Forms.GroupBox group_controls;
+        private System.Windows.Forms.GroupBox group_sure;
+        private System.Windows.Forms.GroupBox group_ceviri;
     }
 }
 
