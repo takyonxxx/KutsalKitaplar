@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Collections;
@@ -12,7 +9,7 @@ namespace Kuran
 {
     public partial class form_main : Form
     {
-        public OleDbConnection Conn;
+        public OleDbConnection Conn = new OleDbConnection();
         public OleDbDataAdapter dAdapter;
         public DataSet dSet;
         public string conString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + System.IO.Directory.GetCurrentDirectory() + "\\Kutsal_Kitaplar.accdb";
@@ -26,9 +23,12 @@ namespace Kuran
         {
             InitializeComponent(); 
             this.SizeChanged += new EventHandler(FormMain_Resize);
-            this.WindowState = FormWindowState.Maximized;
-
+            this.WindowState = FormWindowState.Maximized;            
+            Conn.ConnectionString = conString;
+            Conn.Open();
             dataGrid_ceviri.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            richText_sure.WordWrap = true;
+            richText_sure.ScrollBars = RichTextBoxScrollBars.ForcedBoth;
             //MessageBox.Show(System.IO.Directory.GetCurrentDirectory() + "\\Kutsal_Kitaplar.accdb");
         }
 
@@ -44,7 +44,7 @@ namespace Kuran
                     this.formheight = control.Size.Height;
                     this.formwidth = control.Size.Width;
 
-                    richText_sure.Width = this.formwidth - list_sure.Width - 36;
+                    richText_sure.Width = this.formwidth - list_sure.Width - 28;
                     richText_sure.Height = group_sure.Height;
                     list_sure.Height = richText_sure.Height;
                     dataGrid_ceviri.Width = group_ceviri.Width - 18;
@@ -65,7 +65,7 @@ namespace Kuran
                     group_ceviri.Width = this.formwidth;
                     group_sure.Width = this.formwidth;
 
-                    richText_sure.Width = group_sure.Width - list_sure.Width - 36;
+                    richText_sure.Width = group_sure.Width - list_sure.Width - 12;
                     richText_sure.Height = group_sure.Height;
                     list_sure.Height = richText_sure.Height;
                     dataGrid_ceviri.Width = group_ceviri.Width - 18;
@@ -83,51 +83,23 @@ namespace Kuran
             this.BackColor = Color.Transparent;
             Control control = (Control)sender;
             formheight = control.Size.Height;
-            formwidth = control.Size.Width;
-
-            Conn = new OleDbConnection();
-             try
-                {
-                    list_sure.DataSource = null;
-                    Conn.ConnectionString = conString;
-                    Conn.Open();
-                    OleDbDataAdapter dAdapter = new OleDbDataAdapter("SELECT * FROM sureler ", Conn);
-                    DataSet dSet = new DataSet();
-                    dAdapter.Fill(dSet, "sureler");
-                    list_sure.DisplayMember = "suretam";
-                    list_sure.ValueMember = "sure";
-                    list_sure.DataSource = dSet.Tables["sureler"];
-                    
-            }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Hata: " + ex.Message);
-                }
-                finally
-                {
-                    Conn.Close();
-                }
-            
+            formwidth = control.Size.Width;        
+            btn_kuran.PerformClick();
         }
              
         public int ayetno = 0;
         public int ayetcount = 0;
         private void list_sure_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (list_sure.SelectedItem == null)
-            {
-                return;
-            }
-           
-            Conn = new OleDbConnection();
-            Conn.ConnectionString = conString;
-            Conn.Open();
+            if (list_sure.SelectedIndex == -1) return; 
 
             try
             {
                 if (kitap == 0)
                 {
-                    int sure = Convert.ToInt16(list_sure.SelectedValue.ToString());
+                    var si = list_sure.SelectedItem;
+                    string value = ((System.Data.DataRowView)si).Row.ItemArray[0].ToString();
+                    int sure = int.Parse(value);
                     text_sure.Text = "Sure:" + sure.ToString();
                     richText_sure.Text = "";
                     list_sure.Enabled = false;
@@ -157,13 +129,16 @@ namespace Kuran
                     dAdapter = new OleDbDataAdapter("SELECT kuran.latince ,kuran.turkce FROM meal INNER JOIN kuran ON (meal.ayet = kuran.ayet) AND (meal.sure = kuran.sure) where meal.sure= " + sure + " and meal.ayet=" + ayetno, Conn);
                     dSet = new DataSet();
                     dAdapter.Fill(dSet, "meal");
+                    dAdapter.Dispose();
                     DataTable dt = dSet.Tables["meal"];
                     dataGrid_ceviri.DataSource = dt;
                     list_sure.Enabled = true;
                 }
                 else if (kitap == 1)
                 {
-                    int sure = Convert.ToInt16(list_sure.SelectedValue.ToString());
+                    var si = list_sure.SelectedItem;
+                    string value = ((System.Data.DataRowView)si).Row.ItemArray[0].ToString();
+                    int sure = int.Parse(value);
                     richText_sure.Text = "";
                     list_sure.Enabled = false;                  
                     OleDbCommand cmd = new OleDbCommand("SELECT * FROM tevrat where tevrat.sureno=" + sure, Conn);
@@ -195,8 +170,10 @@ namespace Kuran
                     list_sure.Enabled = true;
                 }
                 else if (kitap == 3)
-                {   
-                    int sure = Convert.ToInt16(list_sure.SelectedValue.ToString());
+                {
+                    var si = list_sure.SelectedItem;
+                    string value = ((System.Data.DataRowView)si).Row.ItemArray[0].ToString();
+                    int sure = int.Parse(value);
                     richText_sure.Text = "";
                     list_sure.Enabled = false;
                     OleDbCommand cmd = new OleDbCommand("SELECT * FROM zebur where zebur.sureno=" + sure, Conn);
@@ -213,22 +190,18 @@ namespace Kuran
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Hata: " + ex.Message);
+                MessageBox.Show("Hata: " + ex.Message);
             }
             finally
-            {
-                Conn.Close();
+            {               
             }
         }
 
         private void btn_forward_Click(object sender, EventArgs e)
         {
-            int sure = Convert.ToInt16(list_sure.SelectedValue.ToString());         
-            Conn = new OleDbConnection();
+            int sure = int.Parse(list_sure.SelectedValue.ToString()); 
             try
-            {                
-                Conn.ConnectionString = conString;
-                Conn.Open();                
+            {                              
                 if (ayetno < ayetcount && ayetno>0)
                 {
                     ayetno = ayetno + 1;
@@ -244,10 +217,10 @@ namespace Kuran
                     dAdapter = new OleDbDataAdapter("SELECT kuran.latince ,kuran.turkce FROM meal INNER JOIN kuran ON (meal.ayet = kuran.ayet) AND (meal.sure = kuran.sure) where meal.sure= " + sure + " and meal.ayet=" + ayetno, Conn);
                     dSet = new DataSet();
                     dAdapter.Fill(dSet, "meal");
+                    dAdapter.Dispose();
                     DataTable dt = dSet.Tables["meal"];
                     dataGrid_ceviri.DataSource = dt;
                 }
-                Conn.Close();
             }
             catch (Exception ex)
             {
@@ -255,18 +228,15 @@ namespace Kuran
             }
             finally
             {
-                Conn.Close();
+                
             }
         }
 
         private void btn_back_Click(object sender, EventArgs e)
         {
-            int sure = Convert.ToInt16(list_sure.SelectedValue.ToString());
-            Conn = new OleDbConnection();
+            int sure = int.Parse(list_sure.SelectedValue.ToString());
             try
             {
-                Conn.ConnectionString = conString;
-                Conn.Open();
                 if (ayetno <= ayetcount && ayetno > 1)
                 {
                     ayetno = ayetno - 1;
@@ -284,11 +254,11 @@ namespace Kuran
                     dAdapter = new OleDbDataAdapter("SELECT kuran.latince ,kuran.turkce FROM meal INNER JOIN kuran ON (meal.ayet = kuran.ayet) AND (meal.sure = kuran.sure) where meal.sure= " + sure + " and meal.ayet=" + ayetno, Conn);
                     dSet = new DataSet();
                     dAdapter.Fill(dSet, "meal");
+                    dAdapter.Dispose();
                     DataTable dt = dSet.Tables["meal"];
                     dataGrid_ceviri.DataSource = dt;
 
-                }
-                Conn.Close();
+                }               
             }
             catch (Exception ex)
             {
@@ -296,36 +266,32 @@ namespace Kuran
             }
             finally
             {
-                Conn.Close();
+               
             }
         }
       
         private void btn_go_Click(object sender, EventArgs e)
         {
-            int sure = Convert.ToInt16(list_sure.SelectedValue.ToString());
-            Conn = new OleDbConnection();
-            ayetno = Convert.ToInt16(text_ayet.Text);
+            int sure = int.Parse(list_sure.SelectedValue.ToString());           
+            ayetno = int.Parse(text_ayet.Text);
             try
-            {
-                Conn.ConnectionString = conString;
-                Conn.Open();
-               
-                    OleDbCommand cmd = new OleDbCommand("SELECT  meal.* FROM meal where sure= " + sure + " and ayet=" + ayetno, Conn);
-                    OleDbDataReader table = cmd.ExecuteReader();
-                    while (table.Read())
-                    {
-                        text_meal.Text = table["ayet"].ToString() + ". " + table["meal"].ToString();
-                        text_latin_arapca.Text = table["ayet"].ToString() + ". " + table["latince"].ToString();
-                        text_arapca.Text = table["ayet"].ToString() + ". " + table["arapca"].ToString();
-                    }
+            { 
+                OleDbCommand cmd = new OleDbCommand("SELECT  meal.* FROM meal where sure= " + sure + " and ayet=" + ayetno, Conn);
+                OleDbDataReader table = cmd.ExecuteReader();
+                while (table.Read())
+                {
+                    text_meal.Text = table["ayet"].ToString() + ". " + table["meal"].ToString();
+                    text_latin_arapca.Text = table["ayet"].ToString() + ". " + table["latince"].ToString();
+                    text_arapca.Text = table["ayet"].ToString() + ". " + table["arapca"].ToString();
+                }
 
 
-                    dAdapter = new OleDbDataAdapter("SELECT kuran.latince ,kuran.turkce FROM meal INNER JOIN kuran ON (meal.ayet = kuran.ayet) AND (meal.sure = kuran.sure) where meal.sure= " + sure + " and meal.ayet=" + ayetno, Conn);
-                    dSet = new DataSet();
-                    dAdapter.Fill(dSet, "meal");
-                    DataTable dt = dSet.Tables["meal"];
-                    dataGrid_ceviri.DataSource = dt;                
-                Conn.Close();
+                dAdapter = new OleDbDataAdapter("SELECT kuran.latince ,kuran.turkce FROM meal INNER JOIN kuran ON (meal.ayet = kuran.ayet) AND (meal.sure = kuran.sure) where meal.sure= " + sure + " and meal.ayet=" + ayetno, Conn);
+                dSet = new DataSet();
+                dAdapter.Fill(dSet, "meal");
+                dAdapter.Dispose();
+                DataTable dt = dSet.Tables["meal"];
+                dataGrid_ceviri.DataSource = dt;  
             }
             catch (Exception ex)
             {
@@ -333,7 +299,7 @@ namespace Kuran
             }
             finally
             {
-                Conn.Close();
+                
             }
         }
 
@@ -346,13 +312,10 @@ namespace Kuran
                 btn_go.Enabled = false;
                 btn_search.Enabled = false;
                 list_sure.Enabled = false;
-                Conn = new OleDbConnection();
                 string ara = text_search.Text;
                 richText_sure.Text = "";
                 try
                 {
-                    Conn.ConnectionString = conString;
-                    Conn.Open();
                     if (kitap == 0)
                     {
                         OleDbCommand cmd = new OleDbCommand("SELECT  meal.* FROM meal where meal like '%" + ara + "%'", Conn);
@@ -360,12 +323,13 @@ namespace Kuran
                         string data = "";
                         while (table.Read())
                         {
-                            data = data + table["sureadi"].ToString() + "." + table["ayet"].ToString() + ". " + table["meal"].ToString() + "\r\n";                            
-                        }
+                            data = data + table["sureadi"].ToString() + "." + table["ayet"].ToString() + ". " + table["meal"].ToString() + "\r\n\r\n";                            
+                        }                        
                         richText_sure.Text = data;
                         dAdapter = new OleDbDataAdapter("SELECT kuran.latince ,kuran.turkce FROM meal INNER JOIN kuran ON (meal.ayet = kuran.ayet) AND (meal.sure = kuran.sure) where kuran.turkce like '%" + ara + "%'", Conn);
                         dSet = new DataSet();
                         dAdapter.Fill(dSet, "meal");
+                        dAdapter.Dispose();
                         DataTable dt = dSet.Tables["meal"];
                         dataGrid_ceviri.DataSource = dt;                       
                     }
@@ -401,8 +365,7 @@ namespace Kuran
                             data = data + table["ayet"].ToString() + "\r\n"; ;
                         }
                         richText_sure.Text = data;
-                    }
-                    Conn.Close();
+                    }                  
                     btn_forward.Enabled = true;
                     btn_back.Enabled = true;
                     btn_go.Enabled = true;
@@ -414,8 +377,7 @@ namespace Kuran
                     MessageBox.Show("Hata: " + ex.Message);
                 }
                 finally
-                {
-                    Conn.Close();
+                {                    
                 }
             }
             else  MessageBox.Show("Aranacak kelimeyi giriniz!");
@@ -452,15 +414,13 @@ namespace Kuran
             try
             {
                 list_sure.DataSource = null;
-                Conn = new OleDbConnection();
-                Conn.ConnectionString = conString;
-                Conn.Open();               
                 OleDbDataAdapter dAdapter = new OleDbDataAdapter("SELECT * FROM sureler order by sureadi", Conn);
                 DataSet dSet = new DataSet();
                 dAdapter.Fill(dSet, "sureler");
+                dAdapter.Dispose();
                 list_sure.DisplayMember = "suretam";
                 list_sure.ValueMember = "sure";
-                list_sure.DataSource = dSet.Tables["sureler"];                           
+                list_sure.DataSource = dSet.Tables["sureler"];
             }
             catch (Exception ex)
             {
@@ -468,7 +428,6 @@ namespace Kuran
             }
             finally
             {
-                Conn.Close();      
             }         
 
         }
@@ -478,12 +437,10 @@ namespace Kuran
             try
             {
                 list_sure.DataSource = null;
-                Conn = new OleDbConnection();
-                Conn.ConnectionString = conString;
-                Conn.Open();
                 OleDbDataAdapter dAdapter = new OleDbDataAdapter("SELECT * FROM sureler", Conn);
                 DataSet dSet = new DataSet();
                 dAdapter.Fill(dSet, "sureler");
+                dAdapter.Dispose();
                 list_sure.DisplayMember = "sureinistam";
                 list_sure.ValueMember = "sureinis";
                 list_sure.DataSource = dSet.Tables["sureler"];
@@ -494,7 +451,6 @@ namespace Kuran
             }
             finally
             {
-                Conn.Close();
             }         
         }
 
@@ -503,12 +459,10 @@ namespace Kuran
             try
             {
                 list_sure.DataSource = null;
-                Conn = new OleDbConnection();
-                Conn.ConnectionString = conString;
-                Conn.Open();
                 OleDbDataAdapter dAdapter = new OleDbDataAdapter("SELECT * FROM sureler ", Conn);
                 DataSet dSet = new DataSet();
                 dAdapter.Fill(dSet, "sureler");
+                dAdapter.Dispose();
                 list_sure.DisplayMember = "suretam";
                 list_sure.ValueMember = "sure";
                 list_sure.DataSource = dSet.Tables["sureler"];
@@ -519,7 +473,6 @@ namespace Kuran
             }
             finally
             {
-                Conn.Close();
             }
             
         }
@@ -527,25 +480,24 @@ namespace Kuran
         private void btn_kuran_Click(object sender, EventArgs e)
         {
             kitap = 0;
-          
+            
             btn_forward.Visible = true;
             btn_back.Visible = true;
             btn_go.Visible = true;
             text_ayet.Visible = true;
             text_sure.Visible = true;            
             try
-            {
+            {               
                 list_sure.DataSource = null;
-                Conn = new OleDbConnection();
-                Conn.ConnectionString = conString;
-                Conn.Open();
+                list_sure.BeginUpdate();
                 OleDbDataAdapter dAdapter = new OleDbDataAdapter("SELECT * FROM sureler ", Conn);
                 DataSet dSet = new DataSet();
                 dAdapter.Fill(dSet, "sureler");
-                list_sure.DisplayMember = "sureadi";
-                list_sure.ValueMember = "sure";
+                dAdapter.Dispose();
                 list_sure.DataSource = dSet.Tables["sureler"];
-                list_sure.SelectedIndex = 0;
+                list_sure.DisplayMember = "suretam";
+                list_sure.ValueMember = "sure";
+                list_sure.EndUpdate();
             }
             catch (Exception ex)
             {
@@ -553,7 +505,6 @@ namespace Kuran
             }
             finally
             {
-                Conn.Close();
             }
         }
 
@@ -569,16 +520,13 @@ namespace Kuran
             try
             {
                 list_sure.DataSource = null;
-                Conn = new OleDbConnection();
-                Conn.ConnectionString = conString;
-                Conn.Open();
                 OleDbDataAdapter dAdapter = new OleDbDataAdapter("SELECT * FROM tevrat_sureler ", Conn);
                 DataSet dSet = new DataSet();
                 dAdapter.Fill(dSet, "tevrat_sureler");
+                dAdapter.Dispose();
                 list_sure.DisplayMember = "sureadi";
                 list_sure.ValueMember = "sureno";
-                list_sure.DataSource = dSet.Tables["tevrat_sureler"];
-                list_sure.SelectedIndex = 0;
+                list_sure.DataSource = dSet.Tables["tevrat_sureler"];                
             }
             catch (Exception ex)
             {
@@ -586,7 +534,6 @@ namespace Kuran
             }
             finally
             {
-                Conn.Close();
             }
         }            
 
@@ -602,9 +549,6 @@ namespace Kuran
             try
             {
                 list_sure.DataSource = null;
-                Conn = new OleDbConnection();
-                Conn.ConnectionString = conString;
-                Conn.Open();               
                 OleDbCommand cmd = new OleDbCommand("SELECT * FROM incil_sureler", Conn);
                 OleDbDataReader table = cmd.ExecuteReader();
                 ArrayList IncilSureler = new ArrayList();
@@ -615,7 +559,6 @@ namespace Kuran
                 list_sure.DisplayMember = "LongName";
                 list_sure.ValueMember = "ShortName";
                 list_sure.DataSource = IncilSureler;
-                list_sure.SelectedIndex = 0;
                 table.Close();
             }
             catch (Exception ex)
@@ -624,7 +567,6 @@ namespace Kuran
             }
             finally
             {
-                Conn.Close();
             }
         }
 
@@ -640,16 +582,13 @@ namespace Kuran
             try
             {
                 list_sure.DataSource = null;
-                Conn = new OleDbConnection();
-                Conn.ConnectionString = conString;
-                Conn.Open();
                 OleDbDataAdapter dAdapter = new OleDbDataAdapter("SELECT * FROM zebur_sureler ", Conn);
                 DataSet dSet = new DataSet();
                 dAdapter.Fill(dSet, "zebur_sureler");
+                dAdapter.Dispose();
                 list_sure.DisplayMember = "sureadi";
                 list_sure.ValueMember = "sureno";
                 list_sure.DataSource = dSet.Tables["zebur_sureler"];
-                list_sure.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -657,7 +596,6 @@ namespace Kuran
             }
             finally
             {
-                Conn.Close();
             }
         }
     }

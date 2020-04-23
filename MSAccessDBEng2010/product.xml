@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>  
+ <Product  
+  xmlns="http://schemas.microsoft.com/developer/2004/01/bootstrapper"  
+  ProductCode="Access.Database.Engine.2010"  
+ >  
+  <!-- Defines list of files to be copied on build -->  
+  <PackageFiles CopyAllPackageFiles="false">  
+   <PackageFile Name="AccessDatabaseEngine.exe" HomeSite="http://download.microsoft.com/download/2/4/3/24375141-E08D-4803-AB0E-10F2E3A07AAA/AccessDatabaseEngine.exe" />  
+   <PackageFile Name="AccessDatabaseEngine_x64.exe" HomeSite="http://download.microsoft.com/download/2/4/3/24375141-E08D-4803-AB0E-10F2E3A07AAA/AccessDatabaseEngine_x64.exe" />  
+  </PackageFiles>    
+  <InstallChecks>  
+       <MsiProductCheck Property="IsInstalled"   
+         Product="{90140000-00D1-0409-0000-0000000FF1CE}"/>  
+  </InstallChecks>  
+  <Commands>  
+   <Command PackageFile="AccessDatabaseEngine.exe"  
+      Arguments='/passive'>  
+    <!-- These checks determine whether the package is to be installed -->  
+    <InstallConditions>  
+     <!-- ByPass if the Processor is not x86 -->  
+     <BypassIf Property="ProcessorArchitecture" Compare="ValueNotEqualTo" Value="Intel"/>  
+   <!-- ByPass if we have installed -->  
+     <BypassIf Property="IsInstalled" Compare="ValueGreaterThan" Value="0" />  
+     <!-- Block install if user does not have admin privileges -->  
+     <FailIf Property="AdminUser" Compare="ValueEqualTo" Value="false" String="AdminRequired"/>  
+     <!-- Block install on Win95 -->  
+     <FailIf Property="Version9x" Compare="VersionLessThan" Value="4.10" String="InvalidPlatformWin9x"/>  
+     <!-- Block install on NT 4 or less -->  
+     <FailIf Property="VersionNT" Compare="VersionLessThan" Value="5.00" String="InvalidPlatformWinNT"/>  
+    </InstallConditions>  
+    <ExitCodes>  
+     <ExitCode Value="0" Result="Success"/>  
+     <ExitCode Value="1641" Result="SuccessReboot"/>  
+     <ExitCode Value="3010" Result="SuccessReboot"/>  
+     <DefaultExitCode Result="Fail" FormatMessageFromSystem="true" String="GeneralFailure" />  
+    </ExitCodes>  
+   </Command>  
+   <Command PackageFile="AccessDatabaseEngine_x64.exe"  
+      Arguments='/passive'>  
+    <!-- These checks determine whether the package is to be installed -->  
+    <InstallConditions>  
+     <!-- ByPass if the Processor is not x64 -->  
+     <BypassIf Property="ProcessorArchitecture" Compare="ValueNotEqualTo" Value="AMD64"/>  
+   <!-- ByPass if we have installed -->  
+     <BypassIf Property="IsInstalled" Compare="ValueGreaterThan" Value="0" />  
+     <!-- Block install if user does not have admin privileges -->  
+     <FailIf Property="AdminUser" Compare="ValueEqualTo" Value="false" String="AdminRequired"/>  
+     <!-- Block install on Win95 -->  
+     <FailIf Property="Version9x" Compare="VersionLessThan" Value="4.10" String="InvalidPlatformWin9x"/>  
+     <!-- Block install on NT 4 or less -->  
+     <FailIf Property="VersionNT" Compare="VersionLessThan" Value="5.00" String="InvalidPlatformWinNT"/>  
+    </InstallConditions>  
+    <ExitCodes>  
+     <ExitCode Value="0" Result="Success"/>  
+     <ExitCode Value="1641" Result="SuccessReboot"/>  
+     <ExitCode Value="3010" Result="SuccessReboot"/>  
+     <DefaultExitCode Result="Fail" FormatMessageFromSystem="true" String="GeneralFailure" />  
+    </ExitCodes>  
+   </Command>  
+  </Commands>  
+ </Product>  

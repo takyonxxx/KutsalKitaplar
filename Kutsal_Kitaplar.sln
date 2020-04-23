@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.779
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kutsal_Kitaplar", "Kutsal_Kitaplar.csproj", "{D86724D3-BC58-4F79-97AF-6564A0EBE201}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Kutsal-Kitaplar", "..\Kutsal-Kitaplar\Kutsal-Kitaplar.vdproj", "{0CCA4646-BC9F-4100-BF2B-3C60BD20BA7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D86724D3-BC58-4F79-97AF-6564A0EBE201}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D86724D3-BC58-4F79-97AF-6564A0EBE201}.Release|x86.ActiveCfg = Release|x86
 		{D86724D3-BC58-4F79-97AF-6564A0EBE201}.Release|x86.Build.0 = Release|x86
+		{0CCA4646-BC9F-4100-BF2B-3C60BD20BA7B}.Debug|Any CPU.ActiveCfg = Debug
+		{0CCA4646-BC9F-4100-BF2B-3C60BD20BA7B}.Debug|x86.ActiveCfg = Debug
+		{0CCA4646-BC9F-4100-BF2B-3C60BD20BA7B}.Release|Any CPU.ActiveCfg = Release
+		{0CCA4646-BC9F-4100-BF2B-3C60BD20BA7B}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
