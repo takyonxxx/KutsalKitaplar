@@ -1,8 +1,0 @@
-C:\Users\tbiliyor\Desktop\KutsalKitaplar\bin\Release\Kutsal_Kitaplar.exe
-C:\Users\tbiliyor\Desktop\KutsalKitaplar\bin\Release\Kutsal_Kitaplar.pdb
-C:\Users\tbiliyor\Desktop\KutsalKitaplar\obj\x86\Release\Kuran.form_main.resources
-C:\Users\tbiliyor\Desktop\KutsalKitaplar\obj\x86\Release\Kutsal_Kitaplar.Properties.Resources.resources
-C:\Users\tbiliyor\Desktop\KutsalKitaplar\obj\x86\Release\Kutsal_Kitaplar.csproj.GenerateResource.cache
-C:\Users\tbiliyor\Desktop\KutsalKitaplar\obj\x86\Release\Kutsal_Kitaplar.csproj.CoreCompileInputs.cache
-C:\Users\tbiliyor\Desktop\KutsalKitaplar\obj\x86\Release\Kutsal_Kitaplar.exe
-C:\Users\tbiliyor\Desktop\KutsalKitaplar\obj\x86\Release\Kutsal_Kitaplar.pdb
